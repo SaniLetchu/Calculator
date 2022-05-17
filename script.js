@@ -40,8 +40,14 @@ function calculate() {
     if(memoryNumber != "" &&  operator != null) {
         let answer = operate(operator, parseFloat(memoryNumber), parseFloat(screenNumber));
         operator = null;
-        screenNumber = answer.toString();
-        screenText.textContent = screenNumber;
+        if(answer.toString().length < 6) {
+            screenNumber = answer.toString();
+            screenText.textContent = screenNumber;
+        }
+        else {
+            clearR()
+            screenText.textContent = "TooBIG"
+        }
     }  
 }
 
