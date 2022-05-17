@@ -8,20 +8,55 @@ body {
     align-items: center;
 }
 
+.screentext {
+    font-size: 50px;
+    padding: 5px 5px;
+}
+
 .calculatorbox {
     display: flex;
     flex-direction: column;
-    height: 500px;
+    gap: 15px;
+    height: 550px;
     width: 400px;
     background-color: rgb(36, 36, 36);
-    padding: 20px 15px 10px 15px;
+    padding: 50px 30px 20px 30px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+button {
+    border-radius: 5px;
+}
+
+.buttons div button {
+    font-size: 50px;
+    height: 85px;
+    width: 92px;
+    border-radius: 15px;
 }
 
 .screen {
+    display: flex;
+    justify-content: right;
+    align-items: center;
     background-color: grey;
     border: solid;
-    border-radius: 2px;
+    height: 100px;
+    border-radius: 5px;
+    border-width: 5px;
     border-color: rgb(87, 87, 87);
+}
+
+.clearbox {
+    display: flex;
+    justify-content: right;
+    padding-right: 5px;
 }
 
 .content {
