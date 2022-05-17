@@ -8,6 +8,21 @@ body {
     align-items: center;
 }
 
+button {
+    color: white;
+    background-color: rgb(104, 104, 104);
+    border-radius: 5px;
+}
+
+
+.operator {
+    background-color: rgb(0, 185, 185);
+}
+
+.calculate {
+    background-color: rgb(161, 0, 0);
+}
+
 .screentext {
     font-size: 105px;
     padding-top: 10px;
@@ -31,15 +46,11 @@ body {
     gap: 15px;
 }
 
-button {
-    border-radius: 5px;
-}
-
 .buttons div button {
     font-size: 50px;
     height: 85px;
     width: 92px;
-    border-radius: 15px;
+    border-radius: 10px;
 }
 
 .screen {

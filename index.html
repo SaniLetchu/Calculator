@@ -25,25 +25,25 @@
                     <button onclick="numberPress(7)">7</button>
                     <button onclick="numberPress(8)">8</button>
                     <button onclick="numberPress(9)">9</button>
-                    <button>/</button>
+                    <button class="operator" onclick="operatorSelector(divide)">/</button>
                 </div>
                 <div class="secondrow">
                     <button onclick="numberPress(4)">4</button>
                     <button onclick="numberPress(5)">5</button>
                     <button onclick="numberPress(6)">6</button>
-                    <button>x</button>
+                    <button class="operator" onclick="operatorSelector(multiply)">x</button>
                 </div>
                 <div class="thirdrow">
                     <button onclick="numberPress(1)">1</button>
                     <button onclick="numberPress(2)">2</button>
                     <button onclick="numberPress(3)">3</button>
-                    <button onclick="operatorSelector(subtract)">-</button>
+                    <button class="operator" onclick="operatorSelector(subtract)">-</button>
                 </div>
                 <div class="fourthrow">
                     <button onclick="numberPress(0)">0</button>
-                    <button onclick="operatorSelector(multiply)">•</button>
-                    <button onclick="calculate()">=</button>
-                    <button onclick="operatorSelector(add)">+</button>
+                    <button onclick="numberPress('.')">.</button>
+                    <button class="calculate" onclick="calculate()">=</button>
+                    <button class="operator" onclick="operatorSelector(add)">+</button>
                 </div>
             </div>
         </div>
