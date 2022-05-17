@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Calculator</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
@@ -15,35 +15,35 @@
     <div class="content">
         <div class="calculatorbox">
             <div class="screen">
-                <p class="screentext">2 + 2</p>
+                <p class="screentext">0</p>
             </div>
             <div class="clearbox">
                 <button>Clear</button>
             </div>
             <div class="buttons">
                 <div class="firstrow">
-                    <button>7</button>
-                    <button>8</button>
-                    <button>9</button>
+                    <button onclick="numberPress(7)">7</button>
+                    <button onclick="numberPress(8)">8</button>
+                    <button onclick="numberPress(9)">9</button>
                     <button>/</button>
                 </div>
                 <div class="secondrow">
-                    <button>4</button>
-                    <button>5</button>
-                    <button>6</button>
+                    <button onclick="numberPress(4)">4</button>
+                    <button onclick="numberPress(5)">5</button>
+                    <button onclick="numberPress(6)">6</button>
                     <button>x</button>
                 </div>
                 <div class="thirdrow">
-                    <button>1</button>
-                    <button>2</button>
-                    <button>3</button>
-                    <button>-</button>
+                    <button onclick="numberPress(1)">1</button>
+                    <button onclick="numberPress(2)">2</button>
+                    <button onclick="numberPress(3)">3</button>
+                    <button onclick="operatorSelector(subtract)">-</button>
                 </div>
                 <div class="fourthrow">
-                    <button>0</button>
-                    <button>•</button>
-                    <button>=</button>
-                    <button>+</button>
+                    <button onclick="numberPress(0)">0</button>
+                    <button onclick="operatorSelector(multiply)">•</button>
+                    <button onclick="calculate()">=</button>
+                    <button onclick="operatorSelector(add)">+</button>
                 </div>
             </div>
         </div>

@@ -9,8 +9,9 @@ body {
 }
 
 .screentext {
-    font-size: 50px;
-    padding: 5px 5px;
+    font-size: 105px;
+    padding-top: 10px;
+    padding-right: 6px;
 }
 
 .calculatorbox {
