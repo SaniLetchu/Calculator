@@ -33,6 +33,14 @@ function calculate() {
     screenText.textContent = screenNumber;
 }
 
+function clearR() {
+    screenNumber = "";
+    operatorClicked = 0;
+    operator = null;
+    memoryNumber = "0";
+    screenText.textContent = "0";
+}
+
 function add(a, b) {
     return a + b;
 }
