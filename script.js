@@ -1,19 +1,27 @@
 
 let screenNumber = "";
-let operatorClicked = 0;
+let operatorActive = false;
 let operator = null;
-let memoryNumber = "";
+let memoryNumber = null;
+let justCalculated = false;
 
 const screenText = document.querySelector('.screentext');
 
-
 function numberPress(number) {
+    if(justCalculated && operatorActive == false) {
+        clearR();
+    }
+    if(operatorActive == true) {
+        memoryNumber = screenNumber;
+        screenNumber = "";
+        operatorActive = false;
+    }
     if(screenNumber.length < 6) {
         if(!(number == 0 && screenNumber.length == 0)) {
-            if(operatorClicked == 1) {
+            if(operatorActive == true) {
                 memoryNumber = screenNumber;
                 screenNumber = "";
-                operatorClicked = 0;
+                operatorActive = false;
             }
             if(number === ".") {
                 if(screenNumber.length == 0) {
@@ -24,39 +32,66 @@ function numberPress(number) {
                 }
             }
             else {
-                screenNumber += number;
+                if(screenNumber.includes('.')) {
+                    if(screenNumber.split('.')[1].length == 1) {
+
+                    }
+                    else {
+                        screenNumber += number;
+                    }
+                }
+                else {
+                    screenNumber += number;
+                }
             }
             screenText.textContent = screenNumber;
         }
     }
 }
 
-function operatorSelector(operatorSelection) {
-    operatorClicked = 1;
-    operator = operatorSelection;
-}
-
 function calculate() {
-    if(memoryNumber != "" &&  operator != null) {
+    if(memoryNumber != null &&  operator != null) {
         let answer = operate(operator, parseFloat(memoryNumber), parseFloat(screenNumber));
+        if(!(answer % 1 === 0)) {
+            answer = answer.toFixed(1);
+        }
+        memoryNumber = answer;
         operator = null;
-        if(answer.toString().length < 6) {
+        if(answer.toString().length < 7) {
             screenNumber = answer.toString();
             screenText.textContent = screenNumber;
         }
         else {
             clearR()
-            screenText.textContent = "TooBIG"
+            screenText.textContent = "!!!!!!"
         }
+        justCalculated = true;
     }  
+}
+
+function operatorSelector(operatorSelection) {
+    justCalculated = false;
+    if(screenNumber == "") {
+        screenNumber = "0";
+    }
+    if(memoryNumber != null) {
+        calculate();
+    }
+    operatorActive = true;
+    operator = operatorSelection;
 }
 
 function clearR() {
     screenNumber = "";
-    operatorClicked = 0;
+    operatorActive= false;
     operator = null;
-    memoryNumber = "";
+    memoryNumber = null;
+    justCalculated = false;
     screenText.textContent = "0";
+}
+
+function operate(mathOperator, a, b) {
+    return mathOperator(a, b);
 }
 
 function add(a, b) {
@@ -80,6 +115,3 @@ function divide(a, b) {
     }
 }
 
-function operate(mathOperator, a, b) {
-    return mathOperator(a, b);
-}

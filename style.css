@@ -2,10 +2,19 @@
     font-family: 'Courier New', Courier, monospace;
 }
 
+h1 {
+    color: white;
+}
+
+.footer p {
+    color: whitesmoke;
+}
+
 body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: rgb(19, 19, 19);
 }
 
 button {
@@ -30,6 +39,7 @@ button {
 }
 
 .calculatorbox {
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     gap: 15px;
