@@ -1,0 +1,30 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.calculatorbox {
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    width: 400px;
+    background-color: rgb(36, 36, 36);
+    padding: 20px 15px 10px 15px;
+}
+
+.screen {
+    background-color: grey;
+    border: solid;
+    border-radius: 2px;
+    border-color: rgb(87, 87, 87);
+}
+
+.content {
+    flex: 1;
+    flex-shrink: 0;
+}
